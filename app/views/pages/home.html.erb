@@ -7,3 +7,20 @@
 <%= @bacon %>
 
 <%= link_to "Make a new form", albums_new_path %>
+
+<div>
+<table>
+	<tr>
+	<td>title</td>
+	<td>genre</td>
+	<td>year</td>
+	</tr>
+	<% @albums.each do |album| %>
+		<tr>
+		<td><%= album.title%></td>
+		<td><%= album.genre%></td>
+		<td><%= album.year%></td>
+		</tr>
+	<% end %>
+</table>
+</div>

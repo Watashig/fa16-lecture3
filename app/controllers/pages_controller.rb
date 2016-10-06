@@ -1,11 +1,15 @@
 class PagesController < ApplicationController
   def home
     @bacon = params[:bacon]
+    @albums = Album.all
   end
-  def new
-  end
+
   def create
-    @title = params[:title]
-    @artist = params[:artist]
+    @album = Album.create(
+    	:year=> params[:year], 
+    	:genre=> params[:genre], 
+    	:title=> params[:title]
+    	)
+    redirect_to '/'
   end
 end
